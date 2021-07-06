@@ -4,4 +4,4 @@
 
 ### Yet Working onto it
 
-#### Note: `fastify is indeed faster` :smile
+#### Note: `fastify is indeed faster` :wink:
