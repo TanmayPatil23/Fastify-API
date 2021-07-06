@@ -1,0 +1,29 @@
+{
+  "name": "Fastify-API",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "fastify": "^3.18.1",
+    "fastify-swagger": "^4.8.2",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.9"
+  },
+  "scripts": {
+    "start": "node server",
+    "dev": "nodemon server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TanmayPatil23/Fastify-API.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TanmayPatil23/Fastify-API/issues"
+  },
+  "homepage": "https://github.com/TanmayPatil23/Fastify-API#readme"
+}
