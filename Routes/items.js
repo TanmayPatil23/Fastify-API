@@ -1,10 +1,10 @@
-const items = require("../Items");
+const { getItems, getItem, addItem } = require("../Controllers/items");
 
 const Item = {
   type: "object",
   properties: {
     id: {
-      type: "integer",
+      type: "string",
     },
     name: {
       type: "string",
@@ -22,9 +22,7 @@ const getItemsOpts = {
       },
     },
   },
-  handler: function (req, reply) {
-    reply.send(items);
-  },
+  handler: getItems,
 };
 
 const getItemOpts = {
@@ -33,21 +31,24 @@ const getItemOpts = {
       200: Item,
     },
   },
-  handler: function (req, reply) {
-    const id = req.params;
-    const item = items.find((i) => {
-      return i.id == id;
-    });
-    reply.send(item);
+  handler: getItem,
+};
+
+const postItemOpts = {
+  schema: {
+    response: {
+      201: Item,
+    },
   },
+  handler: addItem,
 };
 
 function itemRoutes(fastify, options, done) {
-  // Get all items
   fastify.get("/items", getItemsOpts);
 
-  //   Get Single item
   fastify.get("/items/:id", getItemOpts);
+
+  fastify.post("/items/", postItemOpts);
 
   done();
 }
